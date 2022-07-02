@@ -1,6 +1,6 @@
 # Docker
   
-  inputs:
+  variables:
     containerRegistry: ''
     repository: 'gowtham1512'
     command: 'buildAndPush'

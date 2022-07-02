@@ -1,5 +1,6 @@
 # Docker
-  
+  trigger:
+  - master
   variables:
     containerRegistry: ''
     repository: 'gowtham1512'
@@ -7,8 +8,7 @@
     Dockerfile: '**/Dockerfile'
 # Build a Docker image
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
-trigger:
-- master
+
 
 resources:
 - repo: self

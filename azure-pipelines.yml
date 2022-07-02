@@ -1,5 +1,5 @@
 # Docker
-- task: Docker@2
+ task: Docker@2
   inputs:
     containerRegistry: ''
     repository: 'gowtham1512'

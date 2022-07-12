@@ -16,7 +16,7 @@ stages:
     steps:
     - bash: echo build first job
     - bash: echo $(Build.BuildNumber)
-    - bash: echo $(Build.SourceBranchName
+    - bash: echo $(Build.SourceBranchName)
     - bash: echo $(System.DefaultWorkingDirectory)
     - bash: echo $(Build.SourcesDirectory)
     - bash: echo $(build.ArtifactStaging)

@@ -15,16 +15,20 @@ stages:
   - job: Firstjob
     steps:
     - bash: echo build first job
-  - job: secondjob
-    steps:
-    - bash: echo build second job
+    - bash: echo $(Build.BuildNumber)
+    - bash: echo $(Build.SourceBranchName
+    - bash: echo $(System.DefaultWorkingDirectory)
+    - bash: echo $(Build.SourcesDirectory)
+    - bash: echo $(build.ArtifactStaging)
+#   - job: secondjob
+#     steps:
+#     - bash: echo build second job
 
-- stage: dev
-  jobs:
-  - job: FirstjobInQA
-    steps:
-    - bash: echo build first job in QA
-
+# - stage: dev
+#   jobs:
+#   - job: FirstjobInQA
+#     steps:
+#     - bash: echo build first job in QA
 
 
 

@@ -6,21 +6,31 @@
 trigger:
 - master
 
-pool:
-  vmImage: ubuntu-latest
+strategy:
+  matrix:
+    linux:
+      operatingSystem: 'ubuntu-latest'
+    mac:
+      operatingSystem: 'macos-latest'
 
-stages:
-- stage: Build
-  jobs:
-  - job: Firstjob
-    steps:
-    - bash: echo build first job
-    - bash: echo $(Build.BuildNumber)
-    - bash: echo $(Build.SourceBranchName)
-    - bash: echo $(System.DefaultWorkingDirectory)
-    - bash: echo $(Build.SourcesDirectory)
-    - bash: echo $(build.ArtifactStaging)
-#   - job: secondjob
+pool:
+  vmImage: $(operatingSystem)
+
+steps:
+  - script: echo Running on $(operatingSystem)
+
+# stages:
+# - stage: Build
+#   jobs:
+#   - job: Firstjob
+#     steps:
+#     - bash: echo build first job
+#     - bash: echo $(Build.BuildNumber)
+#     - bash: echo $(Build.SourceBranchName)
+#     - bash: echo $(System.DefaultWorkingDirectory)
+#     - bash: echo $(Build.SourcesDirectory)
+#     - bash: echo $(build.ArtifactStaging)
+# #   - job: secondjob
 #     steps:
 #     - bash: echo build second job
 
